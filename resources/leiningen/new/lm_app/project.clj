@@ -5,12 +5,15 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [clojure.java-time "0.3.2"]
+                 [lucasmafra/common-clj "0.52.0"]
+                 [com.stuartsierra/component "0.4.0"]
                  [prismatic/schema "1.1.11"]]
-  :main ^:skip-aot {{namespace}}
+  :main ^:skip-aot {{raw-name}}.system
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}
-             :dev     {:dependencies [[midje "1.9.8"]
-                                      [nubank/matcher-combinators "1.0.0"]
-                                      [lm-app/lein-template "0.1.0-SNAPSHOT"]]
-                       :source-paths ["src/dev"]
-                       :main user}})
+             :dev     {:dependencies [[nubank/matcher-combinators "1.0.0"]
+                                      [nubank/state-flow "2.2.3"]
+                                      [org.clojure/tools.namespace "0.2.11"]
+                                      [com.stuartsierra/component.repl "0.2.0"]]
+                       :source-paths ["dev"]
+                       :aliases {"lint-fix" ["do" "nsorg" "--replace," "kibit" "--replace"]}}})

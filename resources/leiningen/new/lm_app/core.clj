@@ -1,5 +1,4 @@
-(ns {{namespace}}
-  (:gen-class))
+(ns {{sanitized}}.domain.core)
 
 (defn -main
   "I don't do a whole lot ... yet."

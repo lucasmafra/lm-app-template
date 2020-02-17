@@ -1,6 +1,6 @@
-(ns {{namespace}}-test
+(ns {{sanitized}}.domain.core-test
   (:require [clojure.test :refer :all]
-            [{{namespace}} :refer :all]))
+            [{{sanitized}}.domain.core :as nut]))
 
 (deftest a-test
   (testing "FIXME, I fail."

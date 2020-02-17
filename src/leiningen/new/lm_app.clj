@@ -21,12 +21,15 @@
              ["project.clj" (render "project.clj" data)]
              ["README.md" (render "README.md" data)]
              [".gitignore" (render "gitignore" data)]
-             ["src/{{nested-dirs}}.clj" (render "core.clj" data)]
-             ["test/{{nested-dirs}}_test.clj" (render "test.clj" data)]
+             ["src/{{sanitized}}/system.clj" (render "system.clj" data)]
+             ["src/{{sanitized}}/domain/core.clj" (render "core.clj" data)]
+             ["test/{{sanitized}}/domain/core_test.clj" (render "test.clj" data)]
              ["LICENSE" (render "LICENSE" data)]
              ["CHANGELOG.md" (render "CHANGELOG.md" data)]
-             ["src/dev/user.clj" (render "user.clj" data)]
+             ["dev/user.clj" (render "user.clj" data)]
+             ["dev/dev.clj" (render "dev.clj" data)]
              ["resources/data_readers.clj" (render "data_readers.clj" data)]
+             ["resources/app.edn" (render "app.edn" data)]
              "src/{{sanitized}}/schemata"
              "src/{{sanitized}}/controllers"
              "src/{{sanitized}}/adapters"
