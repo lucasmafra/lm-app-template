@@ -24,6 +24,8 @@
              ["src/{{sanitized}}/system.clj" (render "system.clj" data)]
              ["src/{{sanitized}}/domain/core.clj" (render "core.clj" data)]
              ["test/{{sanitized}}/domain/core_test.clj" (render "test.clj" data)]
+             ["test/flows/aux/init.clj" (render "flow_init.clj" data)]
+             ["test/flows/example.clj" (render "flow_example.clj" data)]
              ["LICENSE" (render "LICENSE" data)]
              ["CHANGELOG.md" (render "CHANGELOG.md" data)]
              ["dev/user.clj" (render "user.clj" data)]
