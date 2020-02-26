@@ -20,7 +20,13 @@
   (s/with-fn-validation (state-flow/run! flow state)))
 
 (defmacro defflow
-  [name & flows]
-  `(state-flow.cljtest/defflow ~name {:init   #(init! {})
-                                      :runner run!*}
-                               ~@flows))
+  {:arglists '([name & flows]
+               [name :pre-conditions pre-conditions & flows])}
+  [name & forms]
+  (let [[pre-conditions flows] (if (= :pre-conditions (first forms))
+                                 [(second forms) (rest (rest forms))]
+                                 [[] forms])]
+    `(state-flow.cljtest/defflow ~name {:runner run!*
+                                        :init #(init! {})}
+       ~@pre-conditions
+       ~@flows)))
